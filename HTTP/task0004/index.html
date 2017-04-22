@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>个人任务管理系统</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css"> <!-- media="only screen and (min-width:770px)">
+    <link rel="stylesheet" type="text/css" href="css/web.css" media="only screen and (max-width:769px)"> -->
+</head>
+<body>
+    <header>
+        <div id="back">
+            <span class="fa fa-chevron-left"></span>返回
+        </div>
+        <h1>GTD TOOLS</h1>
+    </header>
+    <div class="container">
+        <div class="leftCate">
+            <h2 id ="allTasks">
+                <span class="fa fa-list-ul"></span>所有任务
+                <span id="taskNum"></span>
+            </h2>
+            <h2>
+                <span class="fa fa-list-ul"></span>分类列表
+            </h2>
+            <ul id="cateList">
+                <!-- <li>
+                    <h3><span class="fa fa-folder-open-o"></span>默认分类(0)<span class="fa fa-minus-circle"></span></h3>
+                    <ul id="defaultChild">
+                        <li>
+                            <h4><span class="fa fa-file-text"></span>默认子分类(0)</h4>
+                        </li>
+                    </ul>
+                </li> -->
+
+            </ul>
+            <div id="addCate"><span class="fa fa-plus"></span></div>
+        </div>
+        <div class="midTask">
+            <div class="status">
+                <ul class="data-status"><li id="all">所有</li><li id="unfinished">未完成</li><li id="finished">已完成</li></ul>
+            </div>
+            <ul id="tasksList" class="data-lists">
+                <!-- <li>
+                    <h5>2015-11-16</h5>
+                    <ul class="item">
+                        <li class="task-item taskDone" taskid="0">
+                            <h6 class="choose"><span class="fa fa-check"></span>使用说明<span class="fa fa-minus-circle"></span></h6>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <h5>2015-11-17</h5>
+                    <ul class="item">
+                        <li class="task-item" taskid="0">
+                            <h6>使用说明<span class="fa fa-minus-circle"></span></h6>
+                        </li>
+                    </ul>
+                </li> -->
+            </ul>
+            <div id="addTask">
+                <span class="fa fa-plus"></span>
+            </div>
+        </div>
+        <div class="rightContent">
+            <div class="task_title">
+                任务标题：<span id="hidTitle"></span>
+                <div class="DoneorEdit">
+                    <span id="done" class="fa fa-check-square-o fa-lg"></span>
+                    <span id="edit" class="fa fa-pencil-square-o fa-lg"></span>
+                </div>
+            </div>
+            <div class="task_date">
+                任务日期：<span id="hidDate"></span>
+            </div>
+            <div id="taskContent" class="task_content" contenteditable="true"></div>
+        </div>
+        <div class="rightHide">
+            <div class="task_title">
+                任务标题：
+                <input type="text" name="title" id="inputTitle" placeholder="请在此输入任务标题">
+            </div>
+            <div class="task_date">
+                任务日期：
+                <input type="date" name="date" id="inputDate">
+            </div>
+            <div class="content">
+                <textarea name="content" id="inputContent" placeholder="请在此输入任务内容" cols="30" rows="10"></textarea>
+                <div id="saveOrReturn">
+                    <button id="save">保存</button>
+                    <button id="return">取消</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="cover">
+        <!-- <div class="cover_wrap"> -->
+            <!-- <div class="cover_title"><p>新增分类</p></div> -->
+            <div class="cover_title">
+                <p style="display:inline">新增分类</p>
+                <div id="close" class="fa fa-times"></div>
+            </div>
+            <div class="cover_content">
+                选择主分类：
+                <select class="cover_mainCate" id="selectCate">
+                    <!-- <option value="0">默认主分类</option> -->
+                </select><br>
+                新分类名称：
+                <input type="text" name="CateName" id="newCateName" placeholder="请在此输入分类名称">
+            </div>
+            <div class="cover_footer">
+                <button id="sure">确认</button>
+                <button id="cancel">取消</button>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="js/todo.util.js"></script>
+    <script type="text/javascript" src="js/storage.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+</body>
+</html>
