@@ -1,6 +1,7 @@
 // 'use strict';
 // var fs = require('fs');
 // var data = '\nHi, Node.js.';
+// 写文件（覆盖）
 // // fs.writeFile('sample.txt', data, function (err) {
 // //     if (err) {
 // //         console.log(err);
@@ -8,6 +9,15 @@
 // //         console.log('ok');
 // //     }
 // // })
+// 读文件
+// fs.readFile('sample.txt', 'utf-8', function (err, data) {
+//     if (err) {
+//         console.log(err);
+//     } else {
+//         console.log(data);
+//     }
+// })
+// 写文件（追加）
 // fs.appendFile('sample.txt', data, 'utf-8', function (err) {
 //     if (err) {
 //         console.log(err);
@@ -16,6 +26,7 @@
 //     }
 // })
 
+// 查看文件状态（异步）
 // fs.stat('sample.txt', function(err,stat) {
 //     if (err) {
 //         console.log(err);
@@ -29,6 +40,8 @@
 //         }
 //     }
 // })
+
+// 查看文件状态（同步）
 // var stats = fs.statSync('sample.txt');
 // console.log(stats.isFile());
 // console.log(stats.isDirectory());
@@ -37,6 +50,8 @@
 //     console.log('birth time:' + stats.birthtime);
 //     console.log('modified time: ' + stats.mtime);
 // }
+
+// stream模块
 // 'use strict';
 // var fs = require('fs');
 // var rs = fs.createReadStream('sample.txt', 'utf-8');

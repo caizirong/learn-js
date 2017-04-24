@@ -11,6 +11,9 @@ process.nextTick(function () {
 // 直接运行
 console.log('a');
 
+
+// 判断执行环境
+// 浏览器还是node
 if (typeof window === 'undefined') {
     console.log('node.js')
 } else {
@@ -46,6 +49,6 @@ var fs = require('fs');
 try {
     var data = fs.readFileSync('sample.txt', 'utf-8');
     console.log(data);
-} catch {
+} catch (err){
     console.log('wrong');
 }
