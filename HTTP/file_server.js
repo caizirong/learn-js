@@ -1,9 +1,9 @@
 'use strict';
 
-var fs = require('fs'),
-    http = require('http'),
-    path = require('path'),
-    url = require('url');
+var fs = require('fs'), // 创建流
+    http = require('http'), // 创建服务器
+    path = require('path'), // 获取本地文件路径
+    url = require('url'); // 解析urlj
 
 // 从命令行参数获取root目录，默认当前目录
 var root = path.resolve(process.argv[2] || '.');
