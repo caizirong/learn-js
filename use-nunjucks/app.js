@@ -44,7 +44,7 @@ var env = createEnv('views', {
 
 var s = env.render('hello.html', {
     name: '<nunjucks>',
-    fruits: ['苹果', '梨子', '香蕉', '车厘子'],
+    fruits: ['苹果', '梨子', '香蕉', '车厘子','水蜜桃'],
     count: 8,
     firstword: 'greet'
 });
