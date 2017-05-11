@@ -1,3 +1,6 @@
+// 不区分post和get请求
+// 统一输出HTML
+
 // 导入koa，是一个class，大写
 const Koa = require('koa');
 
@@ -24,23 +27,23 @@ app.use(async (ctx, next) => {
     ctx.response.body = '<h1>Hello, koa2!</h1>';
 });
 
-// app.use(async(ctx, next) => {
-//     console.log('1');
-//     await next();
-//     console.log('1.1');
-// });
+app.use(async(ctx, next) => {
+    console.log('1');
+    await next();
+    console.log('1.1');
+});
 
-// app.use(async(ctx, next) => {
-//     console.log('2');
-//     await next();
-//     console.log('2.1');
-// })
+app.use(async(ctx, next) => {
+    console.log('2');
+    await next();
+    console.log('2.1');
+})
 
-// app.use(async(ctx, next) => {
-//     console.log('3');
-//     await next();
-//     console.log('3.1');
-// })
+app.use(async(ctx, next) => {
+    console.log('3');
+    await next();
+    console.log('3.1');
+})
 
 // 在端口3000监听
 app.listen(3000);

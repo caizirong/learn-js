@@ -1,11 +1,13 @@
+// 通过URL输出特定的HTML
 'use strict';
 
 var fs = require('fs'), // 创建流
     http = require('http'), // 创建服务器
     path = require('path'), // 获取本地文件路径
-    url = require('url'); // 解析urlj
+    url = require('url'); // 解析url
 
 // 从命令行参数获取root目录，默认当前目录
+// node file_server.js 127.0.0.1 1080 => process.argv[2]= 127.0.0.1
 var root = path.resolve(process.argv[2] || '.');
 
 console.log('Static root dir: ' + root);
@@ -20,7 +22,7 @@ var server = http.createServer(function (request, response) {
     var filepath;
     // url后面没有路径，即在目录下寻找index.html，再没有就寻找default.html
     if (pathname === '/') {
-        filepath = path.join(root, '/index.html') || path.join(root, 'default.html');
+        filepath = path.join(root, '/index.html') || path.join(root, '/default.html');
     } else {
         filepath = path.join(root, pathname);
     }

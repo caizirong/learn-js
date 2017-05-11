@@ -1,0 +1,15 @@
+{
+    "name": "view-koa",
+    "description": "koa with nunjucks，mvc",
+    "authors": "caizirong",
+    "version": "1.0.0",
+    "main": "app.js",
+    "dependencies": {
+        "koa": "2.2.0",
+        "koa-bodyparser": "4.2.0",
+        "koa-router": "7.1.1",
+        "nunjucks": "3.0.0",
+        "mime": "1.3.4",
+        "mz": "2.6.0"
+    }
+}

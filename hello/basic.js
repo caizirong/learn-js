@@ -40,7 +40,7 @@ fs.readFile('sample.png', function (err, data) {
     } else {
         console.log(data);
         console.log(data.length + 'bytes');
-     
+
     }
 });
 // 同步读取文件
@@ -52,3 +52,45 @@ try {
 } catch (err){
     console.log('wrong');
 }
+
+
+/*
+async and await
+async异步执行，碰到await先暂停，执行await后的对象，再返回来继续
+*/
+// (async() => {
+//     console.log('1');
+//     await two();
+//     console.log('1.1');
+// })();
+
+// async function two() {
+//     console.log('2');
+//     await next();
+//     console.log('2.1');
+// }
+// //two();
+
+// async function next() {
+//     console.log('3');
+//     console.log('3.1');
+// }
+// //next();
+/*1
+2
+3
+3.1
+2.1
+1.1*/
+
+
+// (function a() {
+//     console.log('1');
+//     two();
+//     console.log('2');
+// })()
+// function two() {
+//     console.log('3');
+// 1
+// 3
+// 2

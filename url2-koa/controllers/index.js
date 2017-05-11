@@ -25,4 +25,8 @@ module.exports = {
     'POST /signin': fn_signin
 };
 
-
+// ****************************//
+// 'GET /': fn_index, 等价于
+//  router.get('/', async(ctx, next) => {
+//         ...
+// })

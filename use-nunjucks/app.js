@@ -11,7 +11,7 @@ function createEnv(path, opts) {
         env = new nunjucks.Environment( // (loader, opts)
             new nunjucks.FileSystemLoader(path, { // 文件系统加载器，path就是函数createEnv里的参数path
                 noCache: noCache,
-                watch:watch
+                watch: watch
             }), {
                 autoescape: autoescape,
                 throwOnUndefined: throwOnUndefined
@@ -31,7 +31,7 @@ function createEnv(path, opts) {
 }
 
 var env = createEnv('views', {
-    watch:true,
+    watch: true,
     filters: {
         hex: function (n) {
             return '0x' + n.toString(2);
@@ -44,7 +44,7 @@ var env = createEnv('views', {
 
 var s = env.render('hello.html', {
     name: '<nunjucks>',
-    fruits: ['苹果', '梨子', '香蕉', '车厘子','水蜜桃'],
+    fruits: ['苹果', '梨子', '香蕉', '车厘子', '水蜜桃'],
     count: 8,
     firstword: 'greet'
 });
@@ -53,6 +53,6 @@ console.log(s);
 
 console.log(env.render('extend.html', {
     header: 'Hello',
-    body: 'bla bla bla...'
-    // footer: 'copyright'
+    body: 'bla bla bla...',
+    footer: 'copyright'
 }))

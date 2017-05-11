@@ -1,0 +1,11 @@
+{
+    "name": "hello-sequelize",
+    "description": "node.js and mysql",
+    "authors": "caizirong",
+    "version": "1.0.0",
+    "main": "app.js",
+    "dependencies": {
+        "sequelize": "3.24.1",
+        "mysql": "2.11.1"
+    }
+}

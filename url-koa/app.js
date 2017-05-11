@@ -1,3 +1,6 @@
+// 改变url路径能改变输出的HTML：koa-router
+// 可以区分post和get请求
+
 // 导入koa，是一个class，大写
 const Koa = require('koa');
 
@@ -47,35 +50,9 @@ router.post('/signin', async(ctx, next) => {
 })
 
 // add router middleware
-app.use(router.routes());
+app.use(router.routes()); // 启动koa-router
 
 // 在端口3000监听
 app.listen(3000);
 console.log('app started at port 3000...');
 
-
-function addController(router, dir) {
-    var files = fs.readdirSync(__dirname + '/controllers');
-    var js_files = files.filter((f) => {
-        return f.endsWith('.js');
-    })
-    for (var f of js_files) {
-        console.log(`Process controllers: ${f}...`);
-        let mapping = require(__dirname + '/' + dir + '/' + f);
-        addMapping(router, mapping);
-    }
-}
-
-function addMapping(router, mapping) {
-    for (var url in mapping) {
-        if (url.startsWith('GET ')) {
-            var path = url.substring(4);
-            router.get(path, mapping[url]);
-        } else if (url.startsWith('POST ')) {
-            var path = url.substring(5);
-            router.post(path, mapping[url]);
-        } else {
-            console.log(`invalid url: ${url}`);
-        }
-    }
-}
